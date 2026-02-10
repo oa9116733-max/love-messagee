@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>رسالة خاصة</title>
+
+<style>
+body{
+  background:#0d0d0d;
+  color:#fff;
+  font-family:Arial;
+  text-align:center;
+  margin:0;
+  padding:40px 15px;
+}
+
+.box{
+  max-width:420px;
+  margin:auto;
+  padding:25px;
+  border-radius:16px;
+  background:#111;
+}
+
+#name{
+  display:none;
+  font-size:32px;
+  color:#ff8ccf;
+  margin-bottom:10px;
+}
+
+.name-note{
+  display:none;
+  color:#ffb6d5;
+  font-size:15px;
+  margin-bottom:10px;
+}
+
+/* حاوية الصورتين */
+.photos{
+  display:none;
+  display:flex;
+  justify-content:center;
+  gap:8px; /* قربتهم من بعض */
+  margin:14px 0 10px;
+}
+
+/* كل صورة + اسمها */
+.photo-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.photo-box img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.photo-name{
+  margin-top:6px;
+  font-size:14px;
+  color:#ffb6d5;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  font-size:16px;
+  text-align:center;
+}
+
+button{
+  margin-top:15px;
+  padding:10px 22px;
+  border:none;
+  border-radius:18px;
+  background:#ff5fa2;
+  color:#000;
+  font-size:16px;
+}
+
+#msg{
+  display:none;
+  margin-top:10px;
+  line-height:1.9;
+  font-size:16px;
+  color:#ffd6e8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <!-- الاسم -->
+  <div id="name">كاتي</div>
+  <div class="name-note" id="note">الرسالة دي معمولة علشانك وبس</div>
+
+  <!-- الصورتين جنب بعض -->
+  <div class="photos" id="photos">
+    <div class="photo-box">
+      <img src="love.jpg" alt="كاتي">
+      <div class="photo-name">كاتي</div>
+    </div>
+
+    <div class="photo-box">
+      <img src="me.jpg" alt="عمر">
+      <div class="photo-name">عمر</div>
+    </div>
+  </div>
+
+  <!-- الباسورد -->
+  <input type="password" id="pass" placeholder="اكتبي الباسورد يروحي">
+  <button onclick="openMsg()">افتحي الرسالة</button>
+
+  <!-- الرسالة -->
+  <div id="msg">
+    انا لما جيت اكتبلك مكنتش ناوي اطول<br><br>
+    بس اسمك جه في بالي خلاني انساني انا كنت هقول ايه<br><br>
+    انتي مش شخص في حياتي انتي الحياة نفسها لما تبقي رايقة<br><br>
+    انتي اول حاجة بتيجي في بالي وانا صاحي واخر فكرة قبل ما انام<br><br>
+    بحبك بطريقة ملهاش تفسير ولا ليها اسباب ولا ليها نهاية<br><br>
+    انتي الامان اللي كنت بدور عليه والراحة اللي مكنتش لاقيها<br><br>
+    لو خيروني بين الدنيا كلها وبينك هاختارك من غير تفكير<br><br>
+    الرسالة دي ورا باسورد علشان الحب ده كبير ومش لاي حد
+  </div>
+
+</div>
+
+<script>
+function openMsg(){
+  var input = document.getElementById("pass").value;
+  if(input === "1/1"){ // غير الباسورد هنا
+    document.getElementById("name").style.display = "block";
+    document.getElementById("note").style.display = "block";
+    document.getElementById("photos").style.display = "flex";
+    document.getElementById("msg").style.display = "block";
+  }else{
+    alert("الباسورد غلط  يبت");
+  }
+}
+</script>
+
+</body>
+</html>
